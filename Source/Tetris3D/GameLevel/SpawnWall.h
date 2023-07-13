@@ -36,5 +36,5 @@ public:
 private:
 	//AActor* wall;
 	//int32 blockSize = 100;
-	FVector blockSize = FVector(100, 100, 100);
+	//FVector blockSize = FVector(100, 100, 100);
 };
