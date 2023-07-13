@@ -16,19 +16,12 @@ void ASpawnWall::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	// (-100, -100, -100)
-	//CreateWall();
 }
 
 // Called every frame
 void ASpawnWall::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-}
-
-void ASpawnWall::CreateWall(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject)
-{
 
 }
 

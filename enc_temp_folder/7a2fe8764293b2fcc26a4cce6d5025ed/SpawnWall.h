@@ -23,18 +23,4 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
-public:
-	/*UFUNCTION(BlueprintCallable)
-	FORCEINLINE void GetWallActor(AActor* _wall)
-	{
-		wall = _wall;
-	}*/
-	UFUNCTION(BlueprintCallable)
-	void CreateWall(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject);
-
-private:
-	//AActor* wall;
-	//int32 blockSize = 100;
-	FVector blockSize = FVector(100, 100, 100);
 };
