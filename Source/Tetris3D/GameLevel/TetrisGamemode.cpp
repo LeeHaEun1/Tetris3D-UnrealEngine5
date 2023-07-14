@@ -59,3 +59,15 @@ void ATetrisGamemode::CreateWall(FVector mapSize, FVector blockSize, TSubclassOf
 		}
 	}
 }
+
+void ATetrisGamemode::SpawnBlock(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject)
+{
+	FTransform Trans;
+	Trans.SetLocation({ (int)(mapSize.X * 0.5f) * blockSize.X, (int)(mapSize.Y * 0.5f) * blockSize.Y, mapSize.Z * blockSize.Z });
+	AActor* WallYZ = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+}
+
+void ATetrisGamemode::Tick(float _Delta)
+{
+
+}

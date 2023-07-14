@@ -18,9 +18,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateWall(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject);
 
-	UFUNCTION(BlueprintCallable)
-	void SpawnBlock(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject);
-
 protected:
 	void Tick(float _Delta) override;
 };
