@@ -14,6 +14,10 @@ class TETRIS3D_API AUnitBlockPawn : public ATetrisPawn
 {
 	GENERATED_BODY()
 
+public:
+	UFUNCTION(BlueprintCallable)
+	void LeftAction();
+
 protected:
 	void Tick(float _Delta) override;
 

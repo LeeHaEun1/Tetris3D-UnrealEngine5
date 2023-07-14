@@ -3,6 +3,11 @@
 
 #include "GameLevel/UnitBlockPawn.h"
 
+void AUnitBlockPawn::LeftAction()
+{
+
+}
+
 // 일정 시간이 지날때마다 한 칸씩 아래로 떨어지도록
 void AUnitBlockPawn::Tick(float _Delta)
 {
