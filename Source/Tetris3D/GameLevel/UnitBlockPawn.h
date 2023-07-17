@@ -16,7 +16,13 @@ class TETRIS3D_API AUnitBlockPawn : public ATetrisPawn
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void LeftAction();
+	void XminusA();
+	UFUNCTION(BlueprintCallable)
+	void XplusD();
+	UFUNCTION(BlueprintCallable)
+	void YminusW();
+	UFUNCTION(BlueprintCallable)
+	void YplusS();
 
 protected:
 	void Tick(float _Delta) override;
@@ -24,8 +30,8 @@ protected:
 private:
 	UPROPERTY(Category = "[ Unit Block Value ]", EditAnywhere, DisplayName = "Default Falling Speed")
 	float defaultFallingSpeed = 1.0f;
-	UPROPERTY(Category = "[ Unit Block Value ]", EditAnywhere, DisplayName = "Block Size Z")
-	float blockSizeZ = 100.0f;
+	UPROPERTY(Category = "[ Unit Block Value ]", EditAnywhere, DisplayName = "Block Size")
+	FVector blockSize = {100,100,100};
 
 	float currentTime = 0.0f;
 };

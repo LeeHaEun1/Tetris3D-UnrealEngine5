@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameLevel/TetrisPawn.h"
-#include "UnitBlockPawn.generated.h"
+#include "GameFramework/PlayerController.h"
+#include "BlockController.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class TETRIS3D_API AUnitBlockPawn : public ATetrisPawn
+class TETRIS3D_API ABlockController : public APlayerController
 {
 	GENERATED_BODY()
 	
