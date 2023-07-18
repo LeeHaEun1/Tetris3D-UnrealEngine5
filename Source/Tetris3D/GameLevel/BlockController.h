@@ -14,4 +14,6 @@ class TETRIS3D_API ABlockController : public APlayerController
 {
 	GENERATED_BODY()
 	
+private:
+	AActor* currentBlock;
 };

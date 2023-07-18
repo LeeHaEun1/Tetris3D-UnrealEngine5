@@ -3,7 +3,7 @@
 
 #include "GameLevel/TetrisGamemode.h"
 
-void ATetrisGamemode::CreateWall(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject)
+void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 {
 	// ¿øÁ¡: (-100, -100, -100)
 	FTransform Trans0;
@@ -60,11 +60,12 @@ void ATetrisGamemode::CreateWall(FVector mapSize, FVector blockSize, TSubclassOf
 	}
 }
 
-void ATetrisGamemode::SpawnBlock(FVector mapSize, FVector blockSize, TSubclassOf<AActor> wallObject)
+void ATetrisGamemode::SpawnBlock(TSubclassOf<AActor> blockObject)
 {
 	FTransform Trans;
 	Trans.SetLocation({ (int)(mapSize.X * 0.5f) * blockSize.X, (int)(mapSize.Y * 0.5f) * blockSize.Y, mapSize.Z * blockSize.Z });
-	AActor* WallYZ = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+	AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(blockObject, Trans);
+	currentBlock = SpawnedActor;
 }
 
 void ATetrisGamemode::Tick(float _Delta)
