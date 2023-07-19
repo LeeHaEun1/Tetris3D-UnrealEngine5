@@ -23,4 +23,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	UPROPERTY(Category = "[ Unit Block Value ]", EditAnywhere, DisplayName = "Default Falling Speed")
+	float defaultFallingSpeed = 1.0f;
+
+private:
+	float currentTime = 0.0f;
+	//ATetrisGamemode* tetrisGamemode = nullptr;
 };

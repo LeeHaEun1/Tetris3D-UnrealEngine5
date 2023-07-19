@@ -23,11 +23,24 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	// Called to bind functionality to input
+	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent);
+
 public:
 	UPROPERTY(Category = "[ Unit Block Value ]", EditAnywhere, DisplayName = "Default Falling Speed")
 	float defaultFallingSpeed = 1.0f;
 
+	/*UFUNCTION(BlueprintCallable)
+		void XminusA();
+	UFUNCTION(BlueprintCallable)
+		void XplusD();
+	UFUNCTION(BlueprintCallable)
+		void YminusW();
+	UFUNCTION(BlueprintCallable)
+		void YplusS();*/
+
+
 private:
 	float currentTime = 0.0f;
-	ATetrisGamemode* tetrisGamemode;
+	class ATetrisGamemode* myGamemode;
 };

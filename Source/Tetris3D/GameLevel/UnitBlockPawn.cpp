@@ -4,13 +4,13 @@
 #include "GameLevel/UnitBlockPawn.h"
 
 
-// ÀÏÁ¤ ½Ã°£ÀÌ Áö³¯¶§¸¶´Ù ÇÑ Ä­¾¿ ¾Æ·¡·Î ¶³¾îÁöµµ·Ï
+// ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void AUnitBlockPawn::Tick(float _Delta)
 {
 	currentTime += _Delta;
 	if (currentTime > defaultFallingSpeed)
 	{
-		// block = selfÀ» ÇÑ Ä­ ¶³¾îÆ®¸®°í
+		// block = selfï¿½ï¿½ ï¿½ï¿½ Ä­ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
 		AddActorLocalOffset(-FVector(0, 0, blockSize.Z));
 
 		// currentTime initialize

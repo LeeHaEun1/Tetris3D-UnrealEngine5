@@ -17,6 +17,13 @@ AUnitBlockActor::AUnitBlockActor()
 void AUnitBlockActor::BeginPlay()
 {
 	Super::BeginPlay();
+	
+}
+
+// Called every frame
+void AUnitBlockActor::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 
 	// Get Gamemode
 	AGameModeBase* GameModePtr = UGameplayStatics::GetGameMode(GetWorld());
@@ -29,37 +36,14 @@ void AUnitBlockActor::BeginPlay()
 	{
 		return;
 	}
-	myGamemode = TetrisGamemode;
-}
-
-// Called every frame
-void AUnitBlockActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 
 	currentTime += DeltaTime;
 	if (currentTime > defaultFallingSpeed)
 	{
-		AddActorLocalOffset(-FVector(0, 0, myGamemode->blockSize.Z));
+		AddActorLocalOffset(-FVector(0, 0, TetrisGamemode->blockSize.Z));
 
 		// currentTime initialize
 		currentTime = 0;
 	}
 }
 
-//void AUnitBlockActor::XminusA()
-//{
-//	AddActorLocalOffset(-FVector(myGamemode->blockSize.X, 0, 0));
-//}
-//void AUnitBlockActor::XplusD()
-//{
-//	AddActorLocalOffset(FVector(myGamemode->blockSize.X, 0, 0));
-//}
-//void AUnitBlockActor::YminusW()
-//{
-//	AddActorLocalOffset(-FVector(0, myGamemode->blockSize.Y, 0));
-//}
-//void AUnitBlockActor::YplusS()
-//{
-//	AddActorLocalOffset(FVector(0, myGamemode->blockSize.Y, 0));
-//}

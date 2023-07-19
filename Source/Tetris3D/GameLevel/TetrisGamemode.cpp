@@ -5,7 +5,7 @@
 
 void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 {
-	// ¿øÁ¡: (-100, -100, -100)
+	// Origin Point
 	FTransform Trans0;
 	Trans0.SetLocation({ -1 * blockSize.X, -1 * blockSize.Y, -1 * blockSize.Z });
 	AActor* Wall0 = GetWorld()->SpawnActor<AActor>(wallObject, Trans0);

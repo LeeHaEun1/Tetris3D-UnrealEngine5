@@ -16,7 +16,4 @@ class TETRIS3D_API ABlockController : public APlayerController
 	
 private:
 	AActor* currentBlock;
-
-protected:
-	virtual void BeginPlay() override;
 };
