@@ -19,6 +19,9 @@ public:
 	void CreateWall(TSubclassOf<AActor> wallObject);
 
 	UFUNCTION(BlueprintCallable)
+	void SpawnFirstBlock(TSubclassOf<AActor> blockObject);
+
+	UFUNCTION(BlueprintCallable)
 	void SpawnBlock(TSubclassOf<AActor> blockObject);
 
 	UPROPERTY(Category = "[ Map Value ]", EditAnywhere, DisplayName = "Map Size")
@@ -27,8 +30,8 @@ public:
 	UPROPERTY(Category = "[ Unit Block Value ]", EditAnywhere, DisplayName = "Block Size")
 	FVector blockSize = { 100,100,100 };
 
-	AActor* currentBlock;
+	AActor* currentBlock = nullptr;
 
 protected:
-	void Tick(float _Delta) override;
+	//void Tick(float _Delta) override;
 };

@@ -54,6 +54,8 @@ bool AUnitBlockActor::CheckFloor()
 {
 	if (this->GetActorLocation().Z == 0)
 	{
+		//myGamemode->currentBlock = nullptr; // 이걸 계속 보내는 듯...
+		//myGamemode->SpawnBlock(unitBlock);
 		return true;
 	}
 	else

@@ -30,7 +30,9 @@ private:
 	//UPROPERTY(BlueprintCallable)
 	AActor* currentBlock;
 	FVector blockSize;
+	class ATetrisGamemode* myGamemode;
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 };

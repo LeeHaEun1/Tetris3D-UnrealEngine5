@@ -21,10 +21,15 @@ void ABlockController::BeginPlay()
 	{
 		return;
 	}
-	// Get currentBlock
-	currentBlock = TetrisGamemode->currentBlock;
+	myGamemode = TetrisGamemode;
 	// Get BlockSize
 	blockSize = TetrisGamemode->blockSize;
+}
+
+void ABlockController::Tick(float DeltaTime)
+{
+	// Get currentBlock
+	currentBlock = myGamemode->currentBlock;
 }
 
 void ABlockController::XminusA()

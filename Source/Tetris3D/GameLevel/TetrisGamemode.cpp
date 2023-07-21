@@ -60,7 +60,7 @@ void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 	}
 }
 
-void ATetrisGamemode::SpawnBlock(TSubclassOf<AActor> blockObject)
+void ATetrisGamemode::SpawnFirstBlock(TSubclassOf<AActor> blockObject)
 {
 	FTransform Trans;
 	Trans.SetLocation({ (int)(mapSize.X * 0.5f) * blockSize.X, (int)(mapSize.Y * 0.5f) * blockSize.Y, mapSize.Z * blockSize.Z });
@@ -68,7 +68,18 @@ void ATetrisGamemode::SpawnBlock(TSubclassOf<AActor> blockObject)
 	currentBlock = SpawnedActor;
 }
 
-void ATetrisGamemode::Tick(float _Delta)
+void ATetrisGamemode::SpawnBlock(TSubclassOf<AActor> blockObject)
 {
+	/*if (currentBlock == nullptr)
+	{*/
+	if (currentBlock->GetActorLocation().Z == 0)
+	{
+		currentBlock = nullptr;
 
+		FTransform Trans;
+		Trans.SetLocation({ (int)(mapSize.X * 0.5f) * blockSize.X, (int)(mapSize.Y * 0.5f) * blockSize.Y, mapSize.Z * blockSize.Z });
+		AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(blockObject, Trans);
+		currentBlock = SpawnedActor;
+	}
+	//}
 }

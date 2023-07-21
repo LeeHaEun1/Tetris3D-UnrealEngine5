@@ -31,6 +31,10 @@ public:
 	float defaultFallingSpeed = 1.0f;
 
 	bool CheckFloor();
+	
+	//UPROPERTY(BlueprintReadWrite)
+	//AActor unitBlock;
+	//TSubclassOf<AActor> unitBlock;
 
 private:
 	float currentTime = 0.0f;
