@@ -23,21 +23,31 @@ void ABlockController::BeginPlay()
 	}
 	// Get currentBlock
 	currentBlock = TetrisGamemode->currentBlock;
+	// Get BlockSize
+	blockSize = TetrisGamemode->blockSize;
 }
 
 void ABlockController::XminusA()
 {
-	currentBlock->AddActorLocalOffset({ -100,0,0 });
+	currentBlock->AddActorLocalOffset({ -blockSize.X,0,0 });
 }
 
 void ABlockController::XplusD()
 {
+	currentBlock->AddActorLocalOffset({ blockSize.X,0,0 });
 }
 
 void ABlockController::YminusW()
 {
+	currentBlock->AddActorLocalOffset({ 0,-blockSize.Y,0 });
 }
 
 void ABlockController::YplusS()
 {
+	currentBlock->AddActorLocalOffset({ 0,blockSize.Y,0 });
+}
+
+void ABlockController::SpeedUp()
+{
+	currentBlock->AddActorLocalOffset({ 0,0,-blockSize.Z });
 }

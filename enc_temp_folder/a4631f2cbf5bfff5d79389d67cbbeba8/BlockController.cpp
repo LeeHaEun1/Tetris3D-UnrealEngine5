@@ -5,6 +5,7 @@
 #include "TetrisGamemode.h"
 #include "Kismet/GameplayStatics.h"
 
+
 void ABlockController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -22,4 +23,21 @@ void ABlockController::BeginPlay()
 	}
 	// Get currentBlock
 	currentBlock = TetrisGamemode->currentBlock;
+}
+
+void ABlockController::XminusA()
+{
+	currentBlock->AddActorLocalOffset({ -100,0,0 });
+}
+
+void ABlockController::XplusD()
+{
+}
+
+void ABlockController::YminusW()
+{
+}
+
+void ABlockController::YplusS()
+{
 }

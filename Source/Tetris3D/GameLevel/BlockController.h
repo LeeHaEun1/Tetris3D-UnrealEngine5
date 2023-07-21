@@ -15,9 +15,6 @@ class TETRIS3D_API ABlockController : public APlayerController
 	GENERATED_BODY()
 	
 public:
-	//UPROPERTY(BlueprintCallable)
-	AActor* currentBlock;
-
 	UFUNCTION(BlueprintCallable)
 		void XminusA();
 	UFUNCTION(BlueprintCallable)
@@ -26,8 +23,13 @@ public:
 		void YminusW();
 	UFUNCTION(BlueprintCallable)
 		void YplusS();
+	UFUNCTION(BlueprintCallable)
+		void SpeedUp();
 
-
+private:
+	//UPROPERTY(BlueprintCallable)
+	AActor* currentBlock;
+	FVector blockSize;
 
 protected:
 	virtual void BeginPlay() override;
