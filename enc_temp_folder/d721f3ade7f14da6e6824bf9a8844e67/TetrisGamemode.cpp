@@ -9,7 +9,6 @@ void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 	FTransform Trans0;
 	Trans0.SetLocation({ -1 * blockSize.X, -1 * blockSize.Y, -1 * blockSize.Z });
 	AActor* Wall0 = GetWorld()->SpawnActor<AActor>(wallObject, Trans0);
-	locationTag.Add(Trans0.GetTranslation(), Wall0->Tags[0]); // Tags는 Array 반환하기에 [0] 붙여주지 않으면 에러..
 
 	// X, Y, Z Axis
 	for (int i = 0; i < mapSize.X; i++)
@@ -71,8 +70,8 @@ void ATetrisGamemode::SpawnFirstBlock(TSubclassOf<AActor> blockObject)
 
 void ATetrisGamemode::SpawnBlock(TSubclassOf<AActor> blockObject)
 {
-	// 추후 조건 변경 필요
-	// 다른 block 위에 착지시 떨어진 block의 bool 변수를 바꾸고 조건문에서 해당 bool 변수 사용??
+	/*if (currentBlock == nullptr)
+	{*/
 	if (currentBlock->GetActorLocation().Z == 0)
 	{
 		currentBlock = nullptr;
@@ -82,4 +81,5 @@ void ATetrisGamemode::SpawnBlock(TSubclassOf<AActor> blockObject)
 		AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(blockObject, Trans);
 		currentBlock = SpawnedActor;
 	}
+	//}
 }

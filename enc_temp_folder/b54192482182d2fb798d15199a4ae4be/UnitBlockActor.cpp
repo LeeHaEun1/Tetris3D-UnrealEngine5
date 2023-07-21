@@ -52,9 +52,6 @@ void AUnitBlockActor::Tick(float DeltaTime)
 
 bool AUnitBlockActor::CheckFloor()
 {
-	FVector nextPos = GetActorLocation() - FVector(0, 0, myGamemode->blockSize.Z);
-	
-
 	if (this->GetActorLocation().Z == 0)
 	{
 		//myGamemode->currentBlock = nullptr; // 이걸 계속 보내는 듯...

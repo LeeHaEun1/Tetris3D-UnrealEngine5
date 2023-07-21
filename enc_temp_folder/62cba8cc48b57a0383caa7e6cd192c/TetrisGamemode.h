@@ -32,10 +32,6 @@ public:
 
 	AActor* currentBlock = nullptr;
 
-	// FVector, 해당 Fvector에 위치한 Actor의 Tag를 담는 map
-	TMap<FVector, FName> locationTag;
-
-
 protected:
 	//void Tick(float _Delta) override;
 };
