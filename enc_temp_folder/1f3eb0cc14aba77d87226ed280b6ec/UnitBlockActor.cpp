@@ -37,27 +37,29 @@ void AUnitBlockActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (CheckFloor() == false)
+	currentTime += DeltaTime;
+	if (currentTime > defaultFallingSpeed)
 	{
-		currentTime += DeltaTime;
-		if (currentTime > defaultFallingSpeed)
-		{
-			AddActorLocalOffset(-FVector(0, 0, myGamemode->blockSize.Z));
+		AddActorLocalOffset(-FVector(0, 0, myGamemode->blockSize.Z));
 
-			// currentTime initialize
-			currentTime = 0;
-		}
+		// currentTime initialize
+		currentTime = 0;
 	}
 }
 
-bool AUnitBlockActor::CheckFloor()
-{
-	if (this->GetActorLocation().Z == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
+//void AUnitBlockActor::XminusA()
+//{
+//	AddActorLocalOffset(-FVector(myGamemode->blockSize.X, 0, 0));
+//}
+//void AUnitBlockActor::XplusD()
+//{
+//	AddActorLocalOffset(FVector(myGamemode->blockSize.X, 0, 0));
+//}
+//void AUnitBlockActor::YminusW()
+//{
+//	AddActorLocalOffset(-FVector(0, myGamemode->blockSize.Y, 0));
+//}
+//void AUnitBlockActor::YplusS()
+//{
+//	AddActorLocalOffset(FVector(0, myGamemode->blockSize.Y, 0));
+//}
