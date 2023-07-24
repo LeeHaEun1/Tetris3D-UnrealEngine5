@@ -8,7 +8,15 @@
 
 bool ABlockController::CheckWall(FVector nextPos)
 {
-	return false;
+	// 빈 자리들에서는 locationTag[nextPos]를 가져올 수 없어서 예외 발생하는건가..?
+	if (myGamemode->locationTag[nextPos] == FName("Wall"))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void ABlockController::BeginPlay()
@@ -39,7 +47,10 @@ void ABlockController::Tick(float DeltaTime)
 
 void ABlockController::XminusA()
 {
-	currentBlock->AddActorLocalOffset({ -blockSize.X,0,0 });
+	if (CheckWall(currentBlock->GetActorLocation() + (-blockSize.X, 0, 0)) == false)
+	{
+		currentBlock->AddActorLocalOffset({ -blockSize.X,0,0 });
+	}
 }
 
 void ABlockController::XplusD()
