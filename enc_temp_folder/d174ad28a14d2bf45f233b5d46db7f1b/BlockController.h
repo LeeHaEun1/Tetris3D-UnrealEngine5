@@ -16,23 +16,21 @@ class TETRIS3D_API ABlockController : public APlayerController
 	
 public:
 	UFUNCTION(BlueprintCallable)
-	void XminusA();
+		void XminusA();
 	UFUNCTION(BlueprintCallable)
-	void XplusD();
+		void XplusD();
 	UFUNCTION(BlueprintCallable)
-	void YminusW();
+		void YminusW();
 	UFUNCTION(BlueprintCallable)
-	void YplusS();
+		void YplusS();
 	UFUNCTION(BlueprintCallable)
-	void SpeedUp();
+		void SpeedUp();
 
 private:
 	//UPROPERTY(BlueprintCallable)
 	AActor* currentBlock;
 	FVector blockSize;
 	class ATetrisGamemode* myGamemode;
-
-	bool CheckWall(FVector nextPos);
 
 protected:
 	virtual void BeginPlay() override;

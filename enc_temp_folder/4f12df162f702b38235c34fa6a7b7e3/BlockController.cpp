@@ -6,11 +6,6 @@
 #include "Kismet/GameplayStatics.h"
 
 
-bool ABlockController::CheckWall(FVector nextPos)
-{
-	return false;
-}
-
 void ABlockController::BeginPlay()
 {
 	Super::BeginPlay();
