@@ -17,18 +17,21 @@ void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 		FTransform Trans;
 		Trans.SetLocation({ i * blockSize.X, -1 * blockSize.Y, -1 * blockSize.Z });
 		AActor* WallX = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+		locationTag.Add(Trans.GetTranslation(), WallX->Tags[0]);
 	}
 	for (int i = 0; i < mapSize.Y; i++)
 	{
 		FTransform Trans;
 		Trans.SetLocation({ -1 * blockSize.X, i * blockSize.Y, -1 * blockSize.Z });
 		AActor* WallY = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+		locationTag.Add(Trans.GetTranslation(), WallY->Tags[0]);
 	}
 	for (int i = 0; i < mapSize.Z; i++)
 	{
 		FTransform Trans;
 		Trans.SetLocation({ -1 * blockSize.X, -1 * blockSize.Y, i * blockSize.Z });
 		AActor* WallZ = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+		locationTag.Add(Trans.GetTranslation(), WallZ->Tags[0]);
 	}
 
 	// XY, XZ, YZ Face
@@ -39,6 +42,7 @@ void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 			FTransform Trans;
 			Trans.SetLocation({ i * blockSize.X, j * blockSize.Y, -1 * blockSize.Z });
 			AActor* WallXY = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+			locationTag.Add(Trans.GetTranslation(), WallXY->Tags[0]);
 		}
 	}
 	for (int i = 0; i < mapSize.X; i++)
@@ -48,6 +52,7 @@ void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 			FTransform Trans;
 			Trans.SetLocation({ i * blockSize.X, -1 * blockSize.Y, j * blockSize.Z });
 			AActor* WallXZ = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+			locationTag.Add(Trans.GetTranslation(), WallXZ->Tags[0]);
 		}
 	}
 	for (int i = 0; i < mapSize.Y; i++)
@@ -57,8 +62,11 @@ void ATetrisGamemode::CreateWall(TSubclassOf<AActor> wallObject)
 			FTransform Trans;
 			Trans.SetLocation({ -1 * blockSize.X, i * blockSize.Y, j * blockSize.Z });
 			AActor* WallYZ = GetWorld()->SpawnActor<AActor>(wallObject, Trans);
+			locationTag.Add(Trans.GetTranslation(), WallYZ->Tags[0]);
 		}
 	}
+
+	//int a = 0;
 }
 
 void ATetrisGamemode::SpawnFirstBlock(TSubclassOf<AActor> blockObject)
