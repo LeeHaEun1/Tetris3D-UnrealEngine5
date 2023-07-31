@@ -9,14 +9,27 @@
 bool ABlockController::CheckWall(FVector nextPos)
 {
 	// 빈 자리들에서는 locationTag[nextPos]를 가져올 수 없어서 예외 발생하는건가..?
-	if (myGamemode->locationTag[nextPos] == FName("Wall"))
-	{
-		return true;
-	}
-	else
+	if (myGamemode->locationTag.Find(nextPos) == nullptr)
 	{
 		return false;
 	}
+	else
+	{
+		if (myGamemode->locationTag[nextPos] == FName("Wall"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+
+	/*else if(myGamemode->locationTag.Find(nextPos)==nullptr)
+	{
+		return false;
+	}*/
 }
 
 void ABlockController::BeginPlay()
