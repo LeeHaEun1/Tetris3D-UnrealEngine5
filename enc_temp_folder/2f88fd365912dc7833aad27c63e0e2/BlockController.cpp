@@ -57,9 +57,7 @@ void ABlockController::Tick(float DeltaTime)
 void ABlockController::XminusA()
 {
 	FVector currPos = currentBlock->GetActorLocation();
-	// nextPos 계산이 잘못되고 있었다.. 그냥 +(-blockSize.X, 0, 0)로 해주니 연산이 아예 안먹히고 있었음..ㅋ
-	// 즉 currPos = nextPos인 상태로 CheckWall하고 있었기에 wall의 위치에 가서야 nextPos가 wall이라 판별하고 있었던 것
-	FVector nextPos = currPos + FVector(-blockSize.X, 0, 0); // *********************
+	FVector nextPos = currPos + FVector(-blockSize.X, 0, 0);
 	bool checkWall = CheckWall(nextPos);
 
 	if (checkWall == false)
