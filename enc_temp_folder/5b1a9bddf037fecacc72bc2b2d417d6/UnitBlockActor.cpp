@@ -54,15 +54,11 @@ bool AUnitBlockActor::CheckFloor()
 {
 	FVector nextPos = GetActorLocation() - FVector(0, 0, myGamemode->blockSize.Z);
 	
-	// 블록 교체되면 코드 수정 필요
-	// CheckUnitBlock 추가하면 이거로 다음블록이 안나오겠구나.. 각 (x,y)별 min z를 계산하고 이를 기준으로 해줘야하나??
+
 	if (this->GetActorLocation().Z == 0)
 	{
 		//myGamemode->currentBlock = nullptr; // 이걸 계속 보내는 듯...
 		//myGamemode->SpawnBlock(unitBlock);
-		
-		myGamemode->locationTag.Add(this->GetActorLocation(), this->Tags[0]);
-		
 		return true;
 	}
 	else

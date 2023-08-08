@@ -33,7 +33,6 @@ private:
 	class ATetrisGamemode* myGamemode;
 
 	bool CheckWall(FVector nextPos);
-	bool CheckUnitBlock(FVector nextPos);
 
 protected:
 	virtual void BeginPlay() override;
